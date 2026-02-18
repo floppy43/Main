@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Upload - XÇØDË Admin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #0f1535 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 20px;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding-top: 30px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .logo span {
+      color: #d4a574;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #0066ff;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #b0b8d4;
+      font-size: 1rem;
+    }
+
+    .form-section {
+      background: #0f1535;
+      border: 1px solid #1a2547;
+      border-radius: 8px;
+      padding: 40px;
+      margin-bottom: 30px;
+      animation: fadeInUp 0.6s ease-out backwards;
+      box-shadow: 0 8px 32px rgba(0, 102, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .form-section:hover {
+      border-color: #0066ff;
+      box-shadow: 0 8px 32px rgba(0, 102, 255, 0.15);
+    }
+
+    .form-section:nth-of-type(2) {
+      animation-delay: 0.1s;
+    }
+
+    .form-section:nth-of-type(3) {
+      animation-delay: 0.2s;
+    }
+
+    .form-section:nth-of-type(4) {
+      animation-delay: 0.3s;
+    }
+
+    .form-section:nth-of-type(5) {
+      animation-delay: 0.4s;
+    }
+
+    .form-section:nth-of-type(6) {
+      animation-delay: 0.5s;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #0066ff;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #1a2547;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #d4a574;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="url"],
+    input[type="date"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      background: #151d3b;
+      border: 1px solid #1a2547;
+      border-radius: 6px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #6b7899;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: #0066ff;
+      box-shadow: 0 0 20px rgba(0, 102, 255, 0.2);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-row-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .tech-input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .tech-input-group input {
+      flex: 1;
+    }
+
+    .tech-input-group button {
+      padding: 12px 20px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+    }
+
+    .tech-input-group button:hover {
+      background: #0052cc;
+      box-shadow: 0 4px 25px rgba(0, 102, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .tech-input-group button:active {
+      transform: translateY(0);
+    }
+
+    .tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech-badge {
+      background: linear-gradient(135deg, #0066ff 0%, #003d99 100%);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: slideIn 0.3s ease-out;
+      box-shadow: 0 4px 15px rgba(0, 102, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .tech-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4);
+    }
+
+    .tech-badge button {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .file-upload {
+      border: 2px dashed #1a2547;
+      border-radius: 6px;
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .file-upload:hover {
+      border-color: #0066ff;
+      background: rgba(0, 102, 255, 0.05);
+    }
+
+    .file-upload input[type="file"] {
+      display: none;
+    }
+
+    .upload-icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .upload-text {
+      color: #b0b8d4;
+      margin-bottom: 5px;
+    }
+
+    .upload-hint {
+      font-size: 0.85rem;
+      color: #6b7899;
+    }
+
+    .checkbox-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0;
+    }
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .btn {
+      padding: 15px 40px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0066ff 0%, #003d99 100%);
+      color: white;
+      box-shadow: 0 0 30px rgba(0, 102, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 50px rgba(0, 102, 255, 0.5);
+      transform: translateY(-3px);
+    }
+
+    .btn-primary:active {
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #0066ff;
+      border: 2px solid #0066ff;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 102, 255, 0.1);
+    }
+
+    .success-message {
+      background: linear-gradient(135deg, #00c853 0%, #00a840 100%);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: none;
+      animation: slideDown 0.4s ease-out;
+      box-shadow: 0 8px 32px rgba(0, 200, 83, 0.3);
+      border-left: 4px solid #00e676;
+    }
+
+    .error-message {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: none;
+      animation: slideDown 0.4s ease-out;
+      box-shadow: 0 8px 32px rgba(255, 82, 82, 0.3);
+      border-left: 4px solid #ff1744;
+    }
+
+    .preview-section {
+      background: #151d3b;
+      border: 1px solid #1a2547;
+      border-radius: 8px;
+      padding: 30px;
+      margin-top: 30px;
+      animation: fadeInUp 0.6s ease-out;
+      box-shadow: 0 8px 32px rgba(0, 200, 83, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .preview-section:hover {
+      border-color: #00c853;
+      box-shadow: 0 8px 32px rgba(0, 200, 83, 0.15);
+    }
+
+    .preview-title {
+      font-size: 1.3rem;
+      color: #d4a574;
+      margin-bottom: 20px;
+    }
+
+    .preview-card {
+      background: linear-gradient(135deg, #0f1535 0%, #151d3b 100%);
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid #1a2547;
+      transition: all 0.3s ease;
+    }
+
+    .preview-card:hover {
+      border-color: #0066ff;
+      box-shadow: inset 0 0 20px rgba(0, 102, 255, 0.1);
+    }
+
+    .preview-field {
+      margin-bottom: 15px;
+    }
+
+    .preview-field-label {
+      color: #6b7899;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .preview-field-value {
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: help;
+      margin-left: 8px;
+      color: #0066ff;
+      font-weight: bold;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 220px;
+      background-color: #1a2547;
+      color: #b0b8d4;
+      text-align: left;
+      border-radius: 6px;
+      padding: 8px 12px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -110px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      border: 1px solid #0066ff;
+      font-size: 0.8rem;
+      font-weight: normal;
+    }
+
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #1a2547 transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .image-preview {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .image-preview img {
+      max-width: 200px;
+      max-height: 150px;
+      border-radius: 6px;
+      border: 1px solid #1a2547;
+      padding: 8px;
+      background: #151d3b;
+    }
+
+    .image-preview-label {
+      color: #6b7899;
+      font-size: 0.8rem;
+      margin-top: 8px;
+      display: block;
+    }
+
+    .field-required {
+      color: #ff6b6b;
+    }
+
+    .char-count {
+      color: #6b7899;
+      font-size: 0.8rem;
+      margin-top: 5px;
+      display: block;
+    }
+
+    .char-count.warning {
+      color: #ffa500;
+    }
+
+    .success-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #00c853 0%, #00a840 100%);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 10px;
+      animation: pulse 0.5s ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.8); opacity: 0; }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .progress-bar {
+      background: #1a2547;
+      height: 4px;
+      border-radius: 2px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0066ff 0%, #00c853 100%);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .required-fields-notice {
+      background: rgba(0, 102, 255, 0.1);
+      border-left: 3px solid #0066ff;
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 30px;
+      font-size: 0.9rem;
+      color: #b0b8d4;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      .container {
+        max-width: 100%;
+      }
+
+      header {
+        margin-bottom: 30px;
+        padding-top: 20px;
+      }
+
+      .logo {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+      }
+
+      .form-section {
+        padding: 25px 20px;
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+      }
+
+      .form-group {
+        margin-bottom: 18px;
+      }
+
+      label {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="url"],
+      input[type="date"],
+      textarea,
+      select {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+
+      .form-row,
+      .form-row-3 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .tech-input-group {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .tech-input-group button {
+        width: 100%;
+      }
+
+      .button-group {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 12px 30px;
+        font-size: 0.9rem;
+      }
+
+      .preview-section {
+        padding: 20px;
+      }
+
+      .preview-title {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+      }
+
+      .preview-card {
+        padding: 15px;
+      }
+
+      .preview-field {
+        margin-bottom: 12px;
+      }
+
+      .required-fields-notice {
+        padding: 10px;
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+      }
+
+      .tooltip .tooltiptext {
+        width: 180px;
+        font-size: 0.75rem;
+      }
+
+      .image-preview img {
+        max-width: 150px;
+        max-height: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      header {
+        margin-bottom: 20px;
+        padding-top: 15px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        font-size: 0.85rem;
+      }
+
+      .form-section {
+        padding: 18px 15px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+      }
+
+      .section-title {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="url"],
+      input[type="date"],
+      textarea,
+      select {
+        padding: 10px;
+        font-size: 16px; /* Prevents zoom on iOS */
+      }
+
+      textarea {
+        min-height: 80px;
+      }
+
+      .tech-badges {
+        gap: 8px;
+      }
+
+      .tech-badge {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+      }
+
+      .button-group {
+        gap: 10px;
+        margin-top: 25px;
+      }
+
+      .btn {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+        letter-spacing: 0.3px;
+      }
+
+      .checkbox-group {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .checkbox-group label {
+        font-size: 0.9rem;
+      }
+
+      .preview-section {
+        padding: 15px;
+        margin-top: 20px;
+      }
+
+      .preview-title {
+        font-size: 1rem;
+      }
+
+      .preview-card {
+        padding: 12px;
+      }
+
+      .preview-field {
+        margin-bottom: 10px;
+      }
+
+      .preview-field-label {
+        font-size: 0.75rem;
+      }
+
+      .preview-field-value {
+        font-size: 0.9rem;
+      }
+
+      .char-count {
+        font-size: 0.75rem;
+      }
+
+      .tooltip {
+        margin-left: 5px;
+      }
+
+      .tooltip .tooltiptext {
+        width: 150px;
+        font-size: 0.7rem;
+        padding: 6px 10px;
+      }
+
+      .image-preview img {
+        max-width: 120px;
+        max-height: 100px;
+      }
+
+      .required-fields-notice {
+        font-size: 0.8rem;
+        padding: 8px;
+      }
+
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.8); opacity: 0; }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">X<span>Ç</span>ØDËS</div>
+      <h1>Project Upload Portal</h1>
+      <p class="subtitle">Add new projects to the XÇØDË Showcase</p>
+    </header>
+
+    <div class="success-message" id="successMessage">
+      ✓ Project uploaded successfully! It will appear on the showcase shortly.
+    </div>
+    <div class="error-message" id="errorMessage">
+      ✗ Error uploading project. Please check your entries and try again.
+    </div>
+
+    <form id="projectForm" onsubmit="handleSubmit(event)">
+      <div class="required-fields-notice">
+        <span class="field-required">*</span> = Required field | Progress: <span id="formProgress">0</span>%
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <!-- BASIC INFORMATION -->
+      <div class="form-section">
+        <h2 class="section-title">Basic Information</h2>
+
+        <div class="form-group">
+          <label for="title">
+            Project Title <span class="field-required">*</span>
+            <span class="tooltip">
+              ?
+              <span class="tooltiptext">A clear, professional name for your project that will appear on the showcase</span>
+            </span>
+          </label>
+          <input type="text" id="title" name="title" placeholder="e.g., AI Dashboard Platform" maxlength="60" required>
+          <span class="char-count"><span id="titleCount">0</span>/60</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="category">
+              Category <span class="field-required">*</span>
+              <span class="tooltip">
+                ?
+                <span class="tooltiptext">Select the type of project to help users find it</span>
+              </span>
+            </label>
+            <select id="category" name="category" required>
+              <option value="">Select a category</option>
+              <option value="web">Web Application</option>
+              <option value="mobile">Mobile App</option>
+              <option value="platform">Platform & Tools</option>
+              <option value="client">Client Work</option>
+              <option value="saas">SaaS Product</option>
+              <option value="tool">Development Tool</option>
+              <option value="library">Library/Framework</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="icon">
+              Icon/Emoji
+              <span class="tooltip">
+                ?
+                <span class="tooltiptext">A single emoji to represent your project (e.g., 🌐, 📱, 🛠️)</span>
+              </span>
+            </label>
+            <input type="text" id="icon" name="icon" placeholder="e.g., 🌐 (single emoji)" maxlength="2">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">
+            Short Description <span class="field-required">*</span>
+            <span class="tooltip">
+              ?
+              <span class="tooltiptext">A brief, catchy tagline (120 chars max) that appears on project cards</span>
+            </span>
+          </label>
+          <input type="text" id="description" name="description" placeholder="Brief one-line description for the card" maxlength="120" required>
+          <span class="char-count"><span id="descCount">0</span>/120</span>
+        </div>
+
+        <div class="form-group">
+          <label for="fullDescription">
+            Full Description <span class="field-required">*</span>
+            <span class="tooltip">
+              ?
+              <span class="tooltiptext">Detailed description with features, use cases, and benefits (500 chars max)</span>
+            </span>
+          </label>
+          <textarea id="fullDescription" name="fullDescription" placeholder="Detailed description of the project, features, and impact" maxlength="500" required></textarea>
+          <span class="char-count"><span id="fullDescCount">0</span>/500</span>
+        </div>
+      </div>
+
+      <!-- TECHNOLOGY STACK -->
+      <div class="form-section">
+        <h2 class="section-title">Technology Stack</h2>
+
+        <div class="form-group">
+          <label>
+            Technologies Used <span class="field-required">*</span>
+            <span class="tooltip">
+              ?
+              <span class="tooltiptext">Add at least one technology. Press Enter or click "Add Tech" to add each one</span>
+            </span>
+          </label>
+          <div class="tech-input-group">
+            <input type="text" id="techInput" placeholder="Add a technology (e.g., React, Node.js)">
+            <button type="button" onclick="addTechnology()">Add Tech</button>
+          </div>
+          <div class="tech-badges" id="techBadges"></div>
+          <input type="hidden" id="technologies" name="technologies" value="[]" required>
+        </div>
+      </div>
+
+      <!-- PROJECT LINKS & URLS -->
+      <div class="form-section">
+        <h2 class="section-title">Project Links</h2>
+
+        <div class="form-group">
+          <label for="demoUrl">
+            Demo URL
+            <span class="tooltip">
+              ?
+              <span class="tooltiptext">Live link where users can try your project</span>
+            </span>
+          </label>
+          <input type="url" id="demoUrl" name="demoUrl" placeholder="https://demo.example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="githubUrl">
+            GitHub Repository URL
+            <span class="tooltip">
+              ?
+              <span class="tooltiptext">Link to your open-source code repository</span>
+            </span>
+          </label>
+          <input type="url" id="githubUrl" name="githubUrl" placeholder="https://github.com/username/project">
+        </div>
+
+        <div class="form-group">
+          <label for="downloadUrl">
+            Download/Product URL
+            <span class="tooltip">
+              ?
+              <span class="tooltiptext">Where customers can download or purchase your product (Gumroad, App Store, etc.)</span>
+            </span>
+          </label>
+          <input type="url" id="downloadUrl" name="downloadUrl" placeholder="https://example.com/download or https://gumroad.com/...">
+        </div>
+
+        <div class="form-group">
+          <label for="price">
+            Price (USD) - Leave 0 for free
+            <span class="tooltip">
+              ?
+              <span class="tooltiptext">Set to 0 for free projects, or enter the price customers will pay</span>
+            </span>
+          </label>
+          <input type="number" id="price" name="price" placeholder="0" min="0" step="0.01" value="0">
+        </div>
+      </div>
+
+      <!-- MEDIA -->
+      <div class="form-section">
+        <h2 class="section-title">Media & Assets</h2>
+
+        <div class="form-group">
+          <label for="thumbnailUrl">
+            Thumbnail Image URL
+            <span class="tooltip">
+              ?
+              <span class="tooltiptext">Square or near-square image (recommended: 400x400px or larger)</span>
+            </span>
+          </label>
+          <input type="url" id="thumbnailUrl" name="thumbnailUrl" placeholder="https://example.com/thumbnail.png">
+          <div class="image-preview" id="thumbnailPreview"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="imageUrl">
+            Full Image/Screenshot URL
+            <span class="tooltip">
+              ?
+              <span class="tooltiptext">Showcase image or screenshot (recommended: 1200x600px or larger)</span>
+            </span>
+          </label>
+          <input type="url" id="imageUrl" name="imageUrl" placeholder="https://example.com/screenshot.png">
+          <div class="image-preview" id="imagePreview"></div>
+        </div>
+      </div>
+
+      <!-- METADATA -->
+      <div class="form-section">
+        <h2 class="section-title">Project Metadata</h2>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="createdBy">
+              Created By <span class="field-required">*</span>
+              <span class="tooltip">
+                ?
+                <span class="tooltiptext">Your name or team/company name for attribution</span>
+              </span>
+            </label>
+            <input type="text" id="createdBy" name="createdBy" placeholder="Developer/Team Name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="createdDate">
+              Date Created <span class="field-required">*</span>
+              <span class="tooltip">
+                ?
+                <span class="tooltiptext">When the project was first released or completed</span>
+              </span>
+            </label>
+            <input type="date" id="createdDate" name="createdDate" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Project Status
+            <span class="tooltip">
+              ?
+              <span class="tooltiptext">Featured projects appear prominently on the showcase</span>
+            </span>
+          </label>
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" id="featured" name="featured" checked>
+              Featured Project
+            </label>
+            <label>
+              <input type="checkbox" id="active" name="active" checked>
+              Active/Published
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBMIT -->
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary">Upload Project</button>
+        <button type="reset" class="btn btn-secondary">Clear Form</button>
+      </div>
+    </form>
+
+    <!-- PREVIEW -->
+    <div class="preview-section" id="previewSection" style="display: none;">
+      <div class="preview-title">📋 Project Preview</div>
+      <div class="preview-card">
+        <div class="preview-field">
+          <div class="preview-field-label">Title</div>
+          <div class="preview-field-value" id="previewTitle">-</div>
+        </div>
+        <div class="preview-field">
+          <div class="preview-field-label">Category</div>
+          <div class="preview-field-value" id="previewCategory">-</div>
+        </div>
+        <div class="preview-field">
+          <div class="preview-field-label">Description</div>
+          <div class="preview-field-value" id="previewDescription">-</div>
+        </div>
+        <div class="preview-field">
+          <div class="preview-field-label">Technologies</div>
+          <div class="preview-field-value" id="previewTech">-</div>
+        </div>
+        <div class="preview-field">
+          <div class="preview-field-label">Links</div>
+          <div class="preview-field-value">
+            Demo: <span id="previewDemo">-</span> | 
+            GitHub: <span id="previewGithub">-</span> | 
+            Download: <span id="previewDownload">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ====== FORM STATE & UTILITIES ======
+    let technologies = [];
+    let formDirty = false;
+
+    // Debounce function for performance optimization
+    function debounce(func, delay) {
+      let timeoutId;
+      return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func(...args), delay);
+      };
+    }
+
+    // ====== CHARACTER COUNTERS ======
+    const charCounters = {
+      title: { element: document.getElementById('title'), displayId: 'titleCount', max: 60 },
+      description: { element: document.getElementById('description'), displayId: 'descCount', max: 120 },
+      fullDescription: { element: document.getElementById('fullDescription'), displayId: 'fullDescCount', max: 500 }
+    };
+
+    Object.values(charCounters).forEach(counter => {
+      counter.element.addEventListener('input', function() {
+        document.getElementById(counter.displayId).textContent = this.value.length;
+        updateFormProgress();
+      });
+    });
+
+    // Image preview functionality
+    document.getElementById('thumbnailUrl').addEventListener('input', function() {
+      updateImagePreview(this.value, 'thumbnailPreview');
+    });
+
+    document.getElementById('imageUrl').addEventListener('input', function() {
+      updateImagePreview(this.value, 'imagePreview');
+    });
+
+    function updateImagePreview(url, previewId) {
+      const previewContainer = document.getElementById(previewId);
+      if (url.trim()) {
+        const img = new Image();
+        img.onload = () => {
+          previewContainer.innerHTML = `
+            <img src="${url}" alt="Preview" style="display:block; animation: fadeInUp 0.3s ease-out;">
+            <span class="image-preview-label">✓ Preview loaded (${img.width}×${img.height}px)</span>
+          `;
+        };
+        img.onerror = () => {
+          previewContainer.innerHTML = '<span style="color:#ff6b6b;">❌ Image failed to load</span>';
+        };
+        img.src = url;
+      } else {
+        previewContainer.innerHTML = '';
+      }
+    }
+
+    function addTechnology() {
+      const input = document.getElementById('techInput');
+      const tech = input.value.trim();
+
+      if (tech && !technologies.includes(tech)) {
+        technologies.push(tech);
+        input.value = '';
+        updateTechBadges();
+        updateHiddenField();
+        updateFormProgress();
+      }
+    }
+
+    function removeTechnology(tech) {
+      technologies = technologies.filter(t => t !== tech);
+      updateTechBadges();
+      updateHiddenField();
+      updateFormProgress();
+    }
+
+    function updateTechBadges() {
+      const container = document.getElementById('techBadges');
+      container.innerHTML = technologies.map(tech => `
+        <div class="tech-badge">
+          ${tech}
+          <button type="button" onclick="removeTechnology('${tech}')">×</button>
+        </div>
+      `).join('');
+    }
+
+    function updateHiddenField() {
+      document.getElementById('technologies').value = JSON.stringify(technologies);
+    }
+
+    // Form progress tracking with debouncing
+    const debouncedProgress = debounce(updateFormProgress, 150);
+
+    function updateFormProgress() {
+      const requiredFields = ['title', 'category', 'description', 'fullDescription', 'createdBy', 'createdDate'];
+      let filledFields = 0;
+      
+      requiredFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (field && field.value.trim()) {
+          filledFields++;
+        }
+      });
+
+      if (technologies.length > 0) {
+        filledFields++;
+      }
+
+      const progress = Math.round((filledFields / (requiredFields.length + 1)) * 100);
+      document.getElementById('formProgress').textContent = progress;
+      document.getElementById('progressFill').style.width = progress + '%';
+    }
+
+    // Allow Enter key to add technology
+    document.getElementById('techInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        addTechnology();
+      }
+    });
+
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      if (technologies.length === 0) {
+        showError('Please add at least one technology');
+        return;
+      }
+
+      // Validate URLs
+      const urls = [
+        document.getElementById('demoUrl').value,
+        document.getElementById('githubUrl').value,
+        document.getElementById('downloadUrl').value,
+        document.getElementById('thumbnailUrl').value,
+        document.getElementById('imageUrl').value
+      ];
+
+      for (let url of urls) {
+        if (url && !isValidUrl(url)) {
+          showError('Please enter valid URLs');
+          return;
+        }
+      }
+
+      const formData = {
+        id: Date.now(),
+        title: document.getElementById('title').value,
+        category: document.getElementById('category').value,
+        description: document.getElementById('description').value,
+        fullDescription: document.getElementById('fullDescription').value,
+        technologies: technologies,
+        icon: document.getElementById('icon').value || '🚀',
+        thumbnailUrl: document.getElementById('thumbnailUrl').value,
+        imageUrl: document.getElementById('imageUrl').value,
+        downloadUrl: document.getElementById('downloadUrl').value,
+        demoUrl: document.getElementById('demoUrl').value,
+        githubUrl: document.getElementById('githubUrl').value,
+        price: parseFloat(document.getElementById('price').value) || 0,
+        featured: document.getElementById('featured').checked,
+        status: document.getElementById('active').checked ? 'active' : 'inactive',
+        createdBy: document.getElementById('createdBy').value,
+        createdDate: document.getElementById('createdDate').value,
+        downloads: 0,
+        uploadedAt: new Date().toISOString()
+      };
+
+      // Save to localStorage for now (in production, send to backend)
+      let projects = JSON.parse(localStorage.getItem('xcode_projects')) || [];
+      projects.push(formData);
+      localStorage.setItem('xcode_projects', JSON.stringify(projects));
+
+      // Show success message
+      showSuccess(`Project "${formData.title}" uploaded successfully!`);
+      
+      // Reset form
+      document.getElementById('projectForm').reset();
+      technologies = [];
+      updateTechBadges();
+      updateHiddenField();
+      updateFormProgress();
+
+      // Hide preview
+      document.getElementById('previewSection').style.display = 'none';
+      document.getElementById('thumbnailPreview').innerHTML = '';
+      document.getElementById('imagePreview').innerHTML = '';
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Auto-refresh preview after success
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
+
+    function isValidUrl(string) {
+      try {
+        new URL(string);
+        return true;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    function showSuccess(message) {
+      const msg = document.getElementById('successMessage');
+      msg.textContent = '✓ ' + message;
+      msg.style.display = 'block';
+      setTimeout(() => {
+        msg.style.display = 'none';
+      }, 5000);
+    }
+
+    function showError(message) {
+      const msg = document.getElementById('errorMessage');
+      msg.textContent = '✗ ' + message;
+      msg.style.display = 'block';
+      setTimeout(() => {
+        msg.style.display = 'none';
+      }, 5000);
+    }
+
+    // Real-time preview
+    document.getElementById('title').addEventListener('input', () => {
+      document.getElementById('previewTitle').textContent = document.getElementById('title').value || '-';
+      debouncedProgress();
+    });
+
+    document.getElementById('category').addEventListener('change', () => {
+      document.getElementById('previewCategory').textContent = document.getElementById('category').value || '-';
+      debouncedProgress();
+    });
+
+    document.getElementById('description').addEventListener('input', () => {
+      document.getElementById('previewDescription').textContent = document.getElementById('description').value || '-';
+      debouncedProgress();
+    });
+
+    document.getElementById('createdBy').addEventListener('input', () => {
+      debouncedProgress();
+    });
+
+    document.getElementById('createdDate').addEventListener('input', () => {
+      debouncedProgress();
+    });
+
+    document.getElementById('demoUrl').addEventListener('input', () => {
+      const url = document.getElementById('demoUrl').value;
+      document.getElementById('previewDemo').innerHTML = url ? '<span style="color: #00c853;">✓</span>' : '-';
+    });
+
+    document.getElementById('githubUrl').addEventListener('input', () => {
+      const url = document.getElementById('githubUrl').value;
+      document.getElementById('previewGithub').innerHTML = url ? '<span style="color: #00c853;">✓</span>' : '-';
+    });
+
+    document.getElementById('downloadUrl').addEventListener('input', () => {
+      const url = document.getElementById('downloadUrl').value;
+      document.getElementById('previewDownload').innerHTML = url ? '<span style="color: #00c853;">✓</span>' : '-';
+    });
+
+    // Show preview when form has content
+    document.getElementById('projectForm').addEventListener('input', () => {
+      if (document.getElementById('title').value) {
+        document.getElementById('previewSection').style.display = 'block';
+      }
+    });
+
+    // Set today's date as default
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('createdDate').value = today;
+
+    // Initialize progress
+    updateFormProgress();
+  </script>
+</body>
+</html>

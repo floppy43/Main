@@ -1,0 +1,64 @@
+{
+  "app": {
+    "name": "Marché de Commerce Électronique",
+    "welcome": "Bienvenue sur notre marché"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "products": "Produits",
+    "cart": "Panier",
+    "orders": "Mes Commandes",
+    "account": "Mon Compte",
+    "sellers": "Vendeurs",
+    "admin": "Panneau d'Administration"
+  },
+  "common": {
+    "success": "Succès",
+    "error": "Erreur",
+    "loading": "Chargement...",
+    "confirm": "Confirmer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Éditer",
+    "save": "Enregistrer",
+    "close": "Fermer"
+  },
+  "payment": {
+    "paymentMethod": "Mode de Paiement",
+    "creditCard": "Carte de Crédit",
+    "debitCard": "Carte de Débit",
+    "paypal": "PayPal",
+    "mobileMoney": "Argent Mobile",
+    "bankTransfer": "Virement Bancaire",
+    "processPayment": "Traiter le Paiement",
+    "paymentSuccessful": "Paiement Réussi",
+    "paymentFailed": "Paiement Échoué"
+  },
+  "order": {
+    "createOrder": "Créer une Commande",
+    "orderDetails": "Détails de la Commande",
+    "orderStatus": "État de la Commande",
+    "trackOrder": "Suivre la Commande",
+    "cancelOrder": "Annuler la Commande",
+    "pending": "En Attente",
+    "confirmed": "Confirmée",
+    "processing": "Traitement",
+    "shipped": "Expédiée",
+    "delivered": "Livrée",
+    "cancelled": "Annulée"
+  },
+  "seller": {
+    "sellerDashboard": "Tableau de Bord du Vendeur",
+    "myProducts": "Mes Produits",
+    "myEarnings": "Mes Gains",
+    "myShares": "Mes Actions",
+    "requestPayout": "Demander un Paiement",
+    "totalEarnings": "Gains Totaux",
+    "totalShares": "Actions Totales"
+  },
+  "messages": {
+    "orderCreated": "Commande créée avec succès",
+    "paymentProcessed": "Paiement traité avec succès",
+    "earningsCalculated": "Gains calculés avec succès"
+  }
+}

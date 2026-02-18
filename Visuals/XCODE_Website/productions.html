@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productions - XÇØDË</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">X<span>Ç</span>ØDËS</div>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="what-we-do.html">What We Do</a></li>
+          <li><a href="productions.html">Productions</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+        <button class="mobile-toggle">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" style="padding: 150px 0 80px;">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Productions</h1>
+        <p class="tagline" style="margin-top: 20px;">Our Portfolio. Our Proof. Our Impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section style="background: var(--bg-secondary); padding: 80px 0; border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.9;">
+          XÇØDË doesn't just talk about excellence—we demonstrate it. Every project in our portfolio 
+          is a testament to our commitment to quality, innovation, and real-world impact. These are 
+          the products we've built, the clients we've served, and the code we're proud of.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BUTTONS -->
+  <section style="background: var(--bg-primary); padding: 60px 0; border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web Applications</button>
+        <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+        <button class="filter-btn" data-filter="platform">Platforms & Tools</button>
+        <button class="filter-btn" data-filter="client">Client Work</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS GRID -->
+  <section class="productions" style="background: var(--bg-primary); padding: 80px 0;">
+    <div class="container">
+      <div class="projects-grid">
+        <!-- Projects will be loaded dynamically from uploads -->
+        <div data-placeholder style="grid-column: 1 / -1; text-align: center; padding: 80px 40px; background: var(--bg-secondary); border: 2px dashed var(--border-color); border-radius: 8px;">
+          <h3 style="color: var(--accent-blue); font-size: 1.5rem; margin-bottom: 15px;">No projects yet</h3>
+          <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 25px;">Start uploading your amazing work to showcase them here!</p>
+          <a href="../projects uploaders/upload-project.html" class="btn btn-primary">Upload Your First Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section style="background: var(--bg-secondary); padding: 80px 0; border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="stats-grid">
+        <!-- Stats will be loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section style="background: var(--bg-primary); padding: 100px 0; border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 30px; color: var(--accent-blue);">Ready to Build Something Great?</h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 50px; line-height: 1.8;">
+          These projects don't exist in isolation. They're built by talented student developers who are 
+          serious about their craft. If you want to be part of the next generation of elite engineers, 
+          it's time to join XÇØDË.
+        </p>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+          <a href="join.html" class="btn btn-primary">Join Our Team</a>
+          <a href="what-we-do.html" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); padding: 60px 0 40px;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; margin-bottom: 50px;">
+        <div>
+          <h3 style="color: var(--accent-blue); margin-bottom: 20px; font-size: 1.2rem;">XÇØDË</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Elite Student Coding Collective. Where serious coders unite to master development, 
+            embrace discipline, and generate real income.
+          </p>
+        </div>
+        <div>
+          <h3 style="color: var(--accent-gold); margin-bottom: 20px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Navigation</h3>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 12px;"><a href="index.html" style="color: var(--text-secondary); font-size: 0.9rem;">Home</a></li>
+            <li style="margin-bottom: 12px;"><a href="about.html" style="color: var(--text-secondary); font-size: 0.9rem;">About</a></li>
+            <li style="margin-bottom: 12px;"><a href="what-we-do.html" style="color: var(--text-secondary); font-size: 0.9rem;">What We Do</a></li>
+            <li style="margin-bottom: 12px;"><a href="productions.html" style="color: var(--text-secondary); font-size: 0.9rem;">Productions</a></li>
+            <li style="margin-bottom: 12px;"><a href="team.html" style="color: var(--text-secondary); font-size: 0.9rem;">Team</a></li>
+            <li style="margin-bottom: 12px;"><a href="join.html" style="color: var(--text-secondary); font-size: 0.9rem;">Join</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color: var(--accent-gold); margin-bottom: 20px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Connect</h3>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 12px;"><a href="#" style="color: var(--text-secondary); font-size: 0.9rem;">GitHub</a></li>
+            <li style="margin-bottom: 12px;"><a href="#" style="color: var(--text-secondary); font-size: 0.9rem;">Discord</a></li>
+            <li style="margin-bottom: 12px;"><a href="#" style="color: var(--text-secondary); font-size: 0.9rem;">Twitter</a></li>
+            <li style="margin-bottom: 12px;"><a href="#" style="color: var(--text-secondary); font-size: 0.9rem;">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid var(--border-color); padding-top: 40px; text-align: center;">
+        <p style="color: var(--text-muted); font-size: 0.85rem;">
+          © 2024 XÇØDË. All rights reserved. Designed for the elite. | <a href="Privacy policy.html" style="color: #0066ff; text-decoration: none;">Privacy Policy</a> | <a href="Terms.html" style="color: #0066ff; text-decoration: none;">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="../projects uploaders/project-loader.js"></script>
+</body>
+</html>

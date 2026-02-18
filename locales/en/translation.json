@@ -1,0 +1,64 @@
+{
+  "app": {
+    "name": "E-Commerce Marketplace",
+    "welcome": "Welcome to our marketplace"
+  },
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "cart": "Shopping Cart",
+    "orders": "My Orders",
+    "account": "My Account",
+    "sellers": "Sellers",
+    "admin": "Admin Panel"
+  },
+  "common": {
+    "success": "Success",
+    "error": "Error",
+    "loading": "Loading...",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "close": "Close"
+  },
+  "payment": {
+    "paymentMethod": "Payment Method",
+    "creditCard": "Credit Card",
+    "debitCard": "Debit Card",
+    "paypal": "PayPal",
+    "mobileMoney": "Mobile Money",
+    "bankTransfer": "Bank Transfer",
+    "processPayment": "Process Payment",
+    "paymentSuccessful": "Payment Successful",
+    "paymentFailed": "Payment Failed"
+  },
+  "order": {
+    "createOrder": "Create Order",
+    "orderDetails": "Order Details",
+    "orderStatus": "Order Status",
+    "trackOrder": "Track Order",
+    "cancelOrder": "Cancel Order",
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "processing": "Processing",
+    "shipped": "Shipped",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled"
+  },
+  "seller": {
+    "sellerDashboard": "Seller Dashboard",
+    "myProducts": "My Products",
+    "myEarnings": "My Earnings",
+    "myShares": "My Shares",
+    "requestPayout": "Request Payout",
+    "totalEarnings": "Total Earnings",
+    "totalShares": "Total Shares"
+  },
+  "messages": {
+    "orderCreated": "Order created successfully",
+    "paymentProcessed": "Payment processed successfully",
+    "earningsCalculated": "Earnings calculated successfully"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "app": {
+    "name": "Mercado de Comércio Eletrônico",
+    "welcome": "Bem-vindo ao nosso mercado"
+  },
+  "navigation": {
+    "home": "Página Inicial",
+    "products": "Produtos",
+    "cart": "Carrinho de Compras",
+    "orders": "Meus Pedidos",
+    "account": "Minha Conta",
+    "sellers": "Vendedores",
+    "admin": "Painel de Administração"
+  },
+  "common": {
+    "success": "Sucesso",
+    "error": "Erro",
+    "loading": "Carregando...",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "save": "Salvar",
+    "close": "Fechar"
+  },
+  "payment": {
+    "paymentMethod": "Método de Pagamento",
+    "creditCard": "Cartão de Crédito",
+    "debitCard": "Cartão de Débito",
+    "paypal": "PayPal",
+    "mobileMoney": "Dinheiro Móvel",
+    "bankTransfer": "Transferência Bancária",
+    "processPayment": "Processar Pagamento",
+    "paymentSuccessful": "Pagamento Bem-sucedido",
+    "paymentFailed": "Falha no Pagamento"
+  },
+  "order": {
+    "createOrder": "Criar Pedido",
+    "orderDetails": "Detalhes do Pedido",
+    "orderStatus": "Status do Pedido",
+    "trackOrder": "Rastrear Pedido",
+    "cancelOrder": "Cancelar Pedido",
+    "pending": "Pendente",
+    "confirmed": "Confirmado",
+    "processing": "Processando",
+    "shipped": "Enviado",
+    "delivered": "Entregue",
+    "cancelled": "Cancelado"
+  },
+  "seller": {
+    "sellerDashboard": "Painel do Vendedor",
+    "myProducts": "Meus Produtos",
+    "myEarnings": "Meus Ganhos",
+    "myShares": "Minhas Ações",
+    "requestPayout": "Solicitar Pagamento",
+    "totalEarnings": "Ganhos Totais",
+    "totalShares": "Ações Totais"
+  },
+  "messages": {
+    "orderCreated": "Pedido criado com sucesso",
+    "paymentProcessed": "Pagamento processado com sucesso",
+    "earningsCalculated": "Ganhos calculados com sucesso"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Project Title",
+      "category": "web",
+      "description": "Brief project description",
+      "fullDescription": "Detailed project description",
+      "technologies": ["Tech1", "Tech2", "Tech3"],
+      "icon": "🌐",
+      "thumbnailUrl": "assets/projects/project-1.png",
+      "imageUrl": "assets/projects/project-1-full.png",
+      "downloadUrl": "products/project-1.zip",
+      "demoUrl": "https://project-1-demo.com",
+      "githubUrl": "https://github.com/xcode/project-1",
+      "price": 0,
+      "featured": true,
+      "status": "active",
+      "createdBy": "Developer Name",
+      "createdDate": "2026-02-09",
+      "downloads": 0
+    }
+  ]
+}
